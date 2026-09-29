@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Falta de Prioridade - Dossiê Tático</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .detail-container {
+      max-width: 850px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 1rem auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--bat-gold);
+      text-decoration: none;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-5px);
+    }
+    .svg-banner {
+      width: 100%;
+      height: 220px;
+      background: #090a0f;
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .content-section {
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+    .content-section h2 {
+      font-family: 'Rajdhani', sans-serif;
+      color: var(--bat-gold);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 0.4rem;
+    }
+    .content-section p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+    .tactical-card {
+      background: rgba(26, 30, 43, 0.6);
+      border-left: 4px solid var(--bat-purple);
+      padding: 1.2rem;
+      border-radius: 6px;
+      margin-top: 1.5rem;
+    }
+    .tactical-card h3 {
+      font-family: 'Rajdhani', sans-serif;
+      color: var(--bat-purple);
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="bat-signal">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/>
+      </svg>
+    </div>
+    <h1>DOSSIÊ: <span>PRIORIZAÇÃO TÁTICA</span></h1>
+    <p>Direcionamento Estratégico de Energia Cognitiva</p>
+  </header>
+
+  <main class="detail-container">
+    <a href="index.html" class="back-btn">&larr; Voltar ao Painel Tático</a>
+
+    <div class="svg-banner">
+      <svg width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="6"></circle>
+        <circle cx="12" cy="12" r="2" fill="#f59e0b"></circle>
+      </svg>
+    </div>
+
+    <section class="content-section">
+      <h2>1. A Armadilha da Confortabilidade</h2>
+      <p>A tendência natural é dedicar mais tempo a matérias conhecidas e agradáveis, relegando os temas complexos ao final do tempo disponível. Essa prática gera uma ilusão de produtividade, mas mantém as principais vulnerabilidades intactas.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>2. Princípio de Pareto nos Estudos</h2>
+      <p>Cerca de 80% do desempenho em exames vem do domínio de 20% dos conceitos-chave mais complexos. Identificar e atacar estes pontos de maior peso deve ser a prioridade diária.</p>
+    </section>
+
+    <div class="tactical-card">
+      <h3>Matriz Tática de Eisenhower: Solução Tática</h3>
+      <p>Classificação automatizada que cruza nível de dificuldade pessoal, peso na avaliação e tempo restante para a prova, gerando uma ordem diária de estudo otimizada.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>BAT-INTERFACE • ORGANIZADOR DE ESTUDOS DA GABIZINHA</p>
+  </footer>
+
+</body>
+</html>

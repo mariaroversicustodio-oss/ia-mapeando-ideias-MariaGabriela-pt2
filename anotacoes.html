@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 16px;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 16px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            background: #f9f9f9;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Minhas Anotações</h1>
+        
+        <div class="input-group">
+            <input type="text" id="notaInput" placeholder="Digite sua anotação aqui...">
+            <button onclick="adicionarNota()">Adicionar</button>
+        </div>
+
+        <ul id="listaNotas"></ul>
+    </div>
+
+    <script>
+        function adicionarNota() {
+            const input = document.getElementById('notaInput');
+            const texto = input.value.trim();
+
+            if (texto === '') return;
+
+            const ul = document.getElementById('listaNotas');
+            const li = document.createElement('li');
+
+            li.innerHTML = `
+                <span>${texto}</span>
+                <button class="btn-delete" onclick="removerNota(this)">Excluir</button>
+            `;
+
+            ul.appendChild(li);
+            input.value = '';
+        }
+
+        function removerNota(botao) {
+            const li = botao.parentElement;
+            li.remove();
+        }
+    </script>
+
+</body>
+</html>

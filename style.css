@@ -1,0 +1,317 @@
+/* --- VARIÁVEIS DE CORES & ESTILO BATMAN --- */
+:root {
+  --bg-dark: #090a0f;
+  --bg-card: #12151e;
+  --bg-card-hover: #1a1e2b;
+  --bat-gold: #f59e0b;
+  --bat-yellow: #fbbf24;
+  --bat-blue: #3b82f6;
+  --bat-purple: #8b5cf6;
+  --text-light: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-dark: #2a2f45;
+  --shadow-gold: 0 0 20px rgba(245, 158, 11, 0.15);
+  --shadow-purple: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+/* --- RESET BÁSICO --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  position: relative;
+}
+
+/* --- CABEÇALHO TÁTICO --- */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.bat-signal {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.4));
+}
+
+.bat-signal svg {
+  width: 50px;
+  fill: var(--bat-gold);
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+  margin-bottom: 0.4rem;
+}
+
+header h1 span {
+  color: var(--bat-gold);
+}
+
+header p {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* --- GRID DE CARDS --- */
+.container {
+  max-width: 1050px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+/* --- ESTILO DOS CARDS (BAT-DOSSIÊ) --- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  padding: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Detalhe angular do card */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bat-gold), var(--bat-purple));
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-5px);
+  border-color: var(--bat-purple);
+  box-shadow: var(--shadow-purple);
+}
+
+.card-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-tag {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tag-problema {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.tag-incomodo {
+  background: rgba(139, 92, 246, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.card-icon {
+  width: 18px;
+  fill: var(--bat-gold);
+  opacity: 0.7;
+}
+
+.card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.card-btn {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--bat-gold);
+  border: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-btn span {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .card-btn span {
+  transform: translateX(5px);
+}
+
+/* --- MODAL (MODO DOSSIÊ BATCAVERNA) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 7, 10, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  background: #0f121d;
+  border: 1px solid var(--bat-gold);
+  padding: 2.2rem;
+  border-radius: 14px;
+  max-width: 550px;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 0.8rem;
+}
+
+.modal-header h2 {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--bat-gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-dark);
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: var(--bat-gold);
+  color: #000;
+}
+
+.modal-body {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.modal-tactical-box {
+  background: rgba(26, 30, 43, 0.6);
+  border-left: 3px solid var(--bat-purple);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1.2rem;
+}
+
+.modal-tactical-box h4 {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--bat-purple);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+/* RODAPÉ */
+footer {
+  margin-top: auto;
+  padding-top: 3rem;
+  color: var(--text-muted);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-align: center;
+  z-index: 2;
+}

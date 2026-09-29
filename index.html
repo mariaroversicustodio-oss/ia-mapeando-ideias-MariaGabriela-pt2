@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organizador de estudos da Gabizinha</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Link para o ficheiro CSS separado -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="bat-signal">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/>
+      </svg>
+    </div>
+    <h1>Organizador de estudos da <span>Gabizinha</span></h1>
+    <p>Painel Tático: Identificação de Vilões da Rotina de Estudos</p>
+  </header>
+
+  <!-- CONTAINER DE CARDS -->
+  <main class="container">
+
+    <!-- Card 1 -->
+    <div class="card" onclick="openModal(
+      'Procrastinação (O Coringa)', 
+      'Perder horas nas redes sociais por falta de um plano claro sobre por onde começar a estudar.', 
+      'Módulo Bat-Focus: Temporizador tático Pomodoro com bloqueio de distrações e metas de curto prazo.'
+    )">
+      <div class="card-header-info">
+        <span class="card-tag tag-problema">Problema Real</span>
+        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/></svg>
+      </div>
+      <div>
+        <h3>Procrastinação Crônica</h3>
+        <p>Acabar dispersando a atenção com redes sociais por não saber a prioridade do dia.</p>
+      </div>
+      <button class="card-btn">Abrir Dossiê <span>&rarr;</span></button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card" onclick="openModal(
+      'Acúmulo de Conteúdo', 
+      'Sensação sufocante de olhar para uma lista interminável de matérias e tarefas atrasadas.', 
+      'Bat-Divisão de Metas: Quebra automática de tópicos extensos em tarefas menores diárias.'
+    )">
+      <div class="card-header-info">
+        <span class="card-tag tag-incomodo">Incômodo do Dia a Dia</span>
+        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/></svg>
+      </div>
+      <div>
+        <h3>Avalanche de Matérias</h3>
+        <p>Sensação de sufoco pela quantidade de conteúdos e tarefas atrasadas.</p>
+      </div>
+      <button class="card-btn">Abrir Dossiê <span>&rarr;</span></button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card" onclick="openModal(
+      'Perda de Prazos', 
+      'Esquecer entregas de trabalhos ou datas de provas importantes devido à falta de alertas.', 
+      'Bat-Sinal de Alerta: Calendário dinâmico com notificações táticas para não perder nenhuma data crítica.'
+    )">
+      <div class="card-header-info">
+        <span class="card-tag tag-problema">Problema Real</span>
+        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/></svg>
+      </div>
+      <div>
+        <h3>Esquecimento de Prazos</h3>
+        <p>Perder datas limites de entregas por falta de acompanhamento visual das tarefas.</p>
+      </div>
+      <button class="card-btn">Abrir Dossiê <span>&rarr;</span></button>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card" onclick="openModal(
+      'Estudo em Véspera de Prova', 
+      'Tentar absorver todo o assunto na última hora, gerando estresse e resultados abaixo da capacidade.', 
+      'Revisão Espaçada: Sistema automatizado que distribui revisões ao longo das semanas anteriores.'
+    )">
+      <div class="card-header-info">
+        <span class="card-tag tag-incomodo">Insatisfação</span>
+        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/></svg>
+      </div>
+      <div>
+        <h3>Sobrecarga Mental</h3>
+        <p>Cansaço e frustração ao tentar decorar todo o conteúdo em cima da hora.</p>
+      </div>
+      <button class="card-btn">Abrir Dossiê <span>&rarr;</span></button>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card" onclick="openModal(
+      'Falta de Prioridade', 
+      'Gastar energia estudando matérias fáceis e deixar os temas mais difíceis por último.', 
+      'Matriz Tática de Prioridades: Classificação automática do que deve ser estudado primeiro com base na dificuldade e prazos.'
+    )">
+      <div class="card-header-info">
+        <span class="card-tag tag-problema">Problema Real</span>
+        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/></svg>
+      </div>
+      <div>
+        <h3>Dificuldade em Priorizar</h3>
+        <p>Gastar tempo com o que já sabe e adiar os tópicos mais difíceis ou importantes.</p>
+      </div>
+      <button class="card-btn">Abrir Dossiê <span>&rarr;</span></button>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card" onclick="openModal(
+      'Desorganização de Notas', 
+      'Perder tempo tentando lembrar onde salvou resumos ou em qual caderno anotou a aula.', 
+      'Batcaverna Digital: Hub centralizado para armazenar resumos, links e anotações por disciplina.'
+    )">
+      <div class="card-header-info">
+        <span class="card-tag tag-incomodo">Incômodo do Dia a Dia</span>
+        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4.5C10.5 6 8.5 7 6 7C3.5 7 1.5 5 1 4C1 8 3 12 6.5 12.5C5 14 3 14.5 1 14.5C4 18.5 8 19.5 12 19.5C16 19.5 20 18.5 23 14.5C21 14.5 19 14 17.5 12.5C21 12 23 8 23 4C22.5 5 20.5 7 18 7C15.5 7 13.5 6 12 4.5Z"/></svg>
+      </div>
+      <div>
+        <h3>Anotações Dispersas</h3>
+        <p>Desperdício de tempo procurando cadernos, resumos e arquivos perdidos.</p>
+      </div>
+      <button class="card-btn">Abrir Dossiê <span>&rarr;</span></button>
+    </div>
+
+  </main>
+
+  <!-- MODAL DOSSIÊ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Título do Problema</h2>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="modalDescription">Descrição do vilão da rotina...</p>
+        <div class="modal-tactical-box">
+          <h4>Estratégia do Aplicativo:</h4>
+          <p id="modalSolution">Plano de ação...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>BAT-INTERFACE • ORGANIZADOR DE ESTUDOS DA GABIZINHA</p>
+  </footer>
+
+  <!-- SCRIPT DE INTERAÇÃO -->
+  <script>
+    function openModal(title, description, solution) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDescription').innerText = description;
+      document.getElementById('modalSolution').innerText = solution;
+      
+      const modal = document.getElementById('modalOverlay');
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modalOverlay');
+      modal.classList.remove('active');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalOverlay');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
